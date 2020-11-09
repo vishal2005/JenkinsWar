@@ -22,10 +22,10 @@ node{
                )
 '''
    }*/
-   stage('Deploy to Tomcat'){
+ /*  stage('Deploy to Tomcat'){
      sh "cp target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
    }
- /*     stage ('Start Tomcat Server') {
+     stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
          bat "${tomcatBin}\\startup.bat"
          sleep(time:100,unit:"SECONDS")
