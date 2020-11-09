@@ -1,7 +1,4 @@
 node{
-
-   def tomcatWeb = '/opt/tomcat/webapps'
-   def tomcatStatus = ''
    stage('SCM Checkout'){
      git 'https://github.com/vishal2005/JenkinsWar.git'
    }
@@ -22,10 +19,10 @@ node{
                )
 '''
    }*/
- /*  stage('Deploy to Tomcat'){
-     sh "cp target\\JenkinsWar.war \"${tomcatWeb}\\JenkinsWar.war\""
+   stage('Deploy to Tomcat'){
+     sh "cp target/JenkinsWar.war  /opt/tomcat/webapps/"
    }
-     stage ('Start Tomcat Server') {
+ /*    stage ('Start Tomcat Server') {
          sleep(time:5,unit:"SECONDS") 
          bat "${tomcatBin}\\startup.bat"
          sleep(time:100,unit:"SECONDS")
